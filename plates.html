@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zād — Plate Design Concepts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Porcelain palette — matches index.html + the plates */
+      --gold:#C2A24A; --gold-dk:#9C7B22; --terra:#C26A4E; --terra-dk:#A8543B;
+      --sage:#97AC7C; --cream:#FBF7EE; --ivory:#F5EFE3; --sand:#EFE6D6;
+      --dark:#3A2F4A; --mid:#8C7E84;
+      --cobalt:#A8842E;   /* warm gold accent */
+      --coral:#C26A4E;    /* terracotta */
+      --serif:'Cormorant Garamond',serif; --sans:'DM Sans',sans-serif;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:var(--sans);background:var(--cream);color:var(--dark)}
+    header{padding:60px 52px 40px;border-bottom:1px solid var(--sand);display:flex;justify-content:space-between;align-items:flex-end}
+    .logo{font-family:var(--serif);font-size:32px;font-weight:400}
+    .logo em{font-style:italic;color:var(--cobalt)}
+    .logo small{display:block;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mid);margin-top:4px}
+    header p{font-size:13px;color:var(--mid);text-align:right;line-height:1.6}
+    a.back{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cobalt);text-decoration:none}
+    .collection-section{padding:80px 52px}
+    .collection-section:nth-child(even){background:var(--ivory)}
+    .col-header{margin-bottom:56px}
+    .col-tag{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cobalt);font-weight:500;margin-bottom:10px;display:block}
+    .col-header h2{font-family:var(--serif);font-weight:300;font-size:48px;margin-bottom:12px}
+    .col-header p{font-size:15px;color:var(--mid);max-width:560px;line-height:1.7}
+    .col-palette{display:flex;gap:8px;margin-top:20px;align-items:center}
+    .swatch{width:24px;height:24px;border-radius:50%}
+    .swatch-label{font-size:11px;color:var(--mid);letter-spacing:0.06em}
+    .plates-row{display:grid;gap:40px}
+    .plates-row-3{grid-template-columns:repeat(3,1fr)}
+    .plates-row-4{grid-template-columns:repeat(4,1fr)}
+    .plates-row-5{grid-template-columns:repeat(5,1fr)}
+    .plate-card{text-align:center}
+    .plate-svg-wrap{border-radius:6px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:18px;border:1px solid rgba(194,162,74,0.18);transition:box-shadow .3s ease}
+    .plate-card:hover .plate-svg-wrap{box-shadow:0 16px 36px rgba(58,47,74,0.10)}
+    .plate-svg-wrap svg{width:88%;height:88%}
+    .plate-name{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:3px}
+    .plate-col{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cobalt);margin-bottom:6px}
+    .plate-desc{font-size:13px;color:var(--mid);line-height:1.6}
+    .plate-sizes{font-size:11px;color:var(--mid);margin-top:6px;letter-spacing:0.06em}
+    .heritage-bg{background:#FCFAF4}
+    .minimal-bg{background:#FBF8F2}
+    .bahari-bg{background:#EEF5F5}
+    footer{padding:48px 52px;border-top:1px solid var(--sand);text-align:center}
+    footer p{font-size:13px;color:var(--mid)}
+
+    /* ── MOBILE ── */
+    @media(max-width:900px){
+      .plates-row-5{grid-template-columns:repeat(3,1fr)}
+      .plates-row-4{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      header{flex-direction:column;align-items:flex-start;gap:16px;padding:36px 24px 28px}
+      .collection-section{padding:52px 24px}
+      .col-header{margin-bottom:36px}
+      .col-header h2{font-size:36px}
+      .plates-row-5,.plates-row-4,.plates-row-3{grid-template-columns:repeat(2,1fr)}
+      .plates-row{gap:24px}
+      footer{padding:36px 24px}
+    }
+    @media(max-width:380px){
+      .plates-row-5,.plates-row-4,.plates-row-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo"><em>zād</em> <small>by Tables of Joy — Plate Design Concepts</small></div>
+  </div>
+  <div>
+    <p>First Collection · Melamine Plates<br>Bowl 16 cm · Salad 22 cm · Dinner 28 cm</p>
+    <br><a class="back" href="index.html">← Back to Website</a>
+  </div>
+</header>
+
+<!-- HERITAGE -->
+<section class="collection-section" id="heritage">
+  <div class="col-header">
+    <span class="col-tag">Heritage Collection</span>
+    <h2>Egypt, Eternal.</h2>
+    <p>Six designs drawn from the myths, birds, and sacred plants of ancient Egypt — reinterpreted with a refined, contemporary hand.</p>
+    <div class="col-palette">
+      <div class="swatch" style="background:#C26A4E"></div>
+      <div class="swatch" style="background:#C2A24A"></div>
+      <div class="swatch" style="background:#6E9E96"></div>
+      <div class="swatch" style="background:#B89AD0"></div>
+      <div class="swatch" style="background:#E0506A"></div>
+      <span class="swatch-label">Terracotta · Gold · Teal · Lilac · Coral</span>
+    </div>
+  </div>
+  <div class="plates-row plates-row-3">
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-hoopoe"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Birds of Egypt</p>
+      <p class="plate-desc">The hoopoe — Egypt's most beloved bird, fan crest raised, surveying the Nile.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-oasis"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Lotus</p>
+      <p class="plate-desc">A single lotus in bloom on a blush band — Egypt's flower of rebirth.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-lotus"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Papyrus Bouquet</p>
+      <p class="plate-desc">A pharaonic papyrus arrangement — flat, bold, drawn from Egyptian wall paintings.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-geese"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Geese of Meidum</p>
+      <p class="plate-desc">After the 4,500-year-old fresco. Three geese in timeless procession.</p>
+      <p class="plate-sizes">Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-maat"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Maat</p>
+      <p class="plate-desc">The Feather of Truth. Ma'at's ostrich plume — symbol of justice and cosmic balance.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap heritage-bg"><svg viewBox="0 0 300 300" id="p-flamingo"></svg></div>
+      <p class="plate-col">Heritage</p><p class="plate-name">Flamingo</p>
+      <p class="plate-desc">Poised on one leg — the bird the ancients drew for the colour red. Kohl-lined eye, gold anklet.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+  </div>
+</section>
+
+<!-- MINIMAL -->
+<section class="collection-section" id="minimal">
+  <div class="col-header">
+    <span class="col-tag">The Quiet Ones</span>
+    <h2>The Quiet Ones.</h2>
+    <p>Three designs for the table that speaks softly — pure geometry, a single brushstroke, a whisper of gold.</p>
+    <div class="col-palette">
+      <div class="swatch" style="background:#B9CFD9"></div>
+      <div class="swatch" style="background:#E5DCC9"></div>
+      <div class="swatch" style="background:#E0C788"></div>
+      <span class="swatch-label">Dusty Blue · Oat · Honey</span>
+    </div>
+  </div>
+  <div class="plates-row plates-row-3">
+    <div class="plate-card">
+      <div class="plate-svg-wrap minimal-bg"><svg viewBox="0 0 300 300" id="p-modern"></svg></div>
+      <p class="plate-col">The Quiet Ones</p><p class="plate-name">Sunburst</p>
+      <p class="plate-desc">Radiating lines from a golden centre sun — bold, graphic, timeless Egyptian energy.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap minimal-bg"><svg viewBox="0 0 300 300" id="p-zen"></svg></div>
+      <p class="plate-col">The Quiet Ones</p><p class="plate-name">Enso</p>
+      <p class="plate-desc">One enso circle — drawn in a single brushstroke. Imperfect. Complete.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap minimal-bg"><svg viewBox="0 0 300 300" id="p-elegant"></svg></div>
+      <p class="plate-col">The Quiet Ones</p><p class="plate-name">Wreath</p>
+      <p class="plate-desc">A delicate gold olive wreath. A ز monogram rests at the centre.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+  </div>
+</section>
+
+<!-- BAHARI -->
+<section class="collection-section" id="bahari">
+  <div class="col-header">
+    <span class="col-tag">Bahari · by the sea</span>
+    <h2>Bahari.</h2>
+    <p>Fish-scale rosettes in coastal colour — a calm white well, a jewelled trio placed differently on each, and a little fish at the heart. Named for Alexandria's seaside.</p>
+    <div class="col-palette">
+      <div class="swatch" style="background:#D98B72"></div>
+      <div class="swatch" style="background:#4E9189"></div>
+      <div class="swatch" style="background:#79B2AE"></div>
+      <div class="swatch" style="background:#CBA773"></div>
+      <span class="swatch-label">Coral · Tide · Sea Glass · Dune</span>
+    </div>
+  </div>
+  <div class="plates-row plates-row-4">
+    <div class="plate-card">
+      <div class="plate-svg-wrap bahari-bg"><svg viewBox="0 0 300 300" id="p-coral"></svg></div>
+      <p class="plate-col">Bahari</p><p class="plate-name">Coral</p>
+      <p class="plate-desc">A crown of coral scales gathered at the rim — warm and shore-bright.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap bahari-bg"><svg viewBox="0 0 300 300" id="p-tide"></svg></div>
+      <p class="plate-col">Bahari</p><p class="plate-name">Tide</p>
+      <p class="plate-desc">Three teal scales held in balance around the ring — calm and even.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap bahari-bg"><svg viewBox="0 0 300 300" id="p-seaglass"></svg></div>
+      <p class="plate-col">Bahari</p><p class="plate-name">Sea Glass</p>
+      <p class="plate-desc">Aqua scales rising on a diagonal, like light moving through water.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+    <div class="plate-card">
+      <div class="plate-svg-wrap bahari-bg"><svg viewBox="0 0 300 300" id="p-dune"></svg></div>
+      <p class="plate-col">Bahari</p><p class="plate-name">Dune</p>
+      <p class="plate-desc">Sandy scales settled along the lower arc, like the waterline at dusk.</p>
+      <p class="plate-sizes">Bowl · Salad · Dinner</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><em style="font-family:var(--serif);font-size:20px;color:var(--cobalt)">zād</em> &nbsp;·&nbsp; by Tables of Joy &nbsp;·&nbsp; All designs © 2025 &nbsp;·&nbsp; <a href="index.html" style="color:var(--cobalt)">Back to Website</a></p>
+</footer>
+
+<script src="zad-plates.js"></script>
+<script>
+// Catalog renders the real engine plates — same source as the homepage + collection viewers
+const SLOTS = {
+  'p-hoopoe':'birds', 'p-oasis':'lotus', 'p-lotus':'papyrus', 'p-geese':'geese', 'p-maat':'maat', 'p-flamingo':'flamingo',
+  'p-modern':'sunburst', 'p-zen':'enso', 'p-elegant':'wreath',
+  'p-coral':'coral', 'p-tide':'tide', 'p-seaglass':'seaglass', 'p-dune':'dune'
+};
+Object.entries(SLOTS).forEach(([id,design])=>{ const el=document.getElementById(id); if(el) ZAD.render(el,{design,tier:'dinner'}); });
+</script>
+</body>
+</html>
